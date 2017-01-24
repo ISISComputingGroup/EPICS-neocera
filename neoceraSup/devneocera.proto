@@ -1,0 +1,23 @@
+Terminator = '\r\n';
+ReplyTimeout = 2000;
+
+getIDN {
+    out "*IDN?";
+    #Read no more that 39 chars (EPICS limit)
+    in "%/(.{0,39})/";
+    ExtraInput = Ignore;
+}
+
+getTriggerLevel {
+    out "LV\$1?";
+    in "%s";
+    ExtraInput = Ignore;
+}
+
+setTriggerLevel {
+    out "LV\$1%s?";
+}
+
+resetCounts {
+    out "RES";
+}
