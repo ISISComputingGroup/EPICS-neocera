@@ -1,23 +1,9 @@
-Terminator = '\r\n';
+Terminator = ';';
 ReplyTimeout = 2000;
+ExtraInput = Error;
 
-getIDN {
-    out "*IDN?";
+getMode {
+    out "QISTATE?";
     #Read no more that 39 chars (EPICS limit)
-    in "%/(.{0,39})/";
-    ExtraInput = Ignore;
-}
-
-getTriggerLevel {
-    out "LV\$1?";
-    in "%s";
-    ExtraInput = Ignore;
-}
-
-setTriggerLevel {
-    out "LV\$1%s?";
-}
-
-resetCounts {
-    out "RES";
+    in "%i";    
 }
