@@ -7,3 +7,8 @@ getMode {
     #Read no more that 39 chars (EPICS limit)
     in "%i";    
 }
+
+setMode {
+    out "%{SMON|SCONT}";
+	@init { getMode; }
+}
