@@ -82,3 +82,24 @@ setCtl2 {
 	out "SACONT%d";
 	@init { getCtl2; }
 }
+
+# PID for output 1 (heater)
+getPID1 {
+	out "QPID?1";
+	in "%f";
+	in "%(\$1\$2)f";
+	in "%(\$1\$3)f";
+	in "%(\$1\$4)f";
+	in "%(\$1\$5)f";
+}
+
+# PID for output 2 (analog)
+getPID2 {
+	out "QPID?2";
+	in "%f";
+	in "%(\$1\$2)f";
+	in "%(\$1\$3)f";
+	in "%(\$1\$4)f";
+	in "%(\$1\$5)f";
+	in "%(\$1\$6)f";
+}
