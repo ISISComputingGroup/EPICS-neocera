@@ -25,3 +25,18 @@ getSpRbv {
 	out "QSETP?\$1";
 	in "%f%(\$2)c";	
 }
+
+# get the heater output config
+getCon1 {
+	out "QOUT?1";
+	in "%i";
+	in "%(\$1\$2)i";
+	in "%(\$1\$3)i";
+}
+
+# get the analog output config
+getCon2 {
+	out "QOUT?2";
+	in "%i";
+	in "%(\$1)i";
+}
