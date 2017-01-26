@@ -3,7 +3,7 @@ include $(TOP)/configure/CONFIG
 #=======================================
 
 # Install .dbd and .db files
-DATA += devneocera.proto
+DATA += main.proto
 
 #=======================================
 include $(TOP)/configure/RULES

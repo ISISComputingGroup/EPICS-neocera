@@ -40,3 +40,9 @@ getCon2 {
 	in "%i";
 	in "%(\$1)i";
 }
+
+# get the heater percentage of full scale
+getHeat {
+	out "QHEAT?";
+	in "%f";
+}
