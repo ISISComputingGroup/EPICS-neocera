@@ -17,8 +17,15 @@ getTemp {
 	in "%f%(\$2)c";	
 }
 
+# Get temp sp for init ignore units
+getTempSp {
+	out "QSETP?\$1";
+	in "%f%*c";	
+}
+
 setTemp {
 	out "SETP\$1,%f";
+	@init { getTempSp;}
 }
 
 getSpRbv {
@@ -34,6 +41,15 @@ getCon1 {
 	in "%(\$1\$3)i";
 }
 
+# get the control for output 1 (like getCon1 but just the control type)
+getCtl1 {
+	out "QOUT?1";
+	in "%*i";
+	in "%i";
+	in "%*i";
+}
+
+
 # get the analog output config
 getCon2 {
 	out "QOUT?2";
@@ -41,8 +57,28 @@ getCon2 {
 	in "%(\$1)i";
 }
 
+# get the control for output 2 (like getCon2 but just the control type)
+getCtl2 {
+	out "QOUT?2";
+	in "%*i";
+	in "%i";
+}
+
+
 # get the heater percentage of full scale
 getHeat {
 	out "QHEAT?";
 	in "%f";
+}
+
+# set the sensor associated with output 1 (heater)
+setCtl1 {
+	out "SHCONT%d";
+	@init { getCtl2; }
+}
+
+# set the sensor associated with output 2 (analog)
+setCtl2 {
+	out "SACONT%d";
+	@init { getCtl2; }
 }
