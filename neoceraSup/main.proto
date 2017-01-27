@@ -14,7 +14,8 @@ setMode {
 
 getTemp {
 	out "QSAMP?\$1";
-	in "%f%(\$2)c";	
+	in "%f%(\$2)c";
+	@mismatch { in " ----- ";}
 }
 
 # Get temp sp for init ignore units
