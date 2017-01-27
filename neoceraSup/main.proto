@@ -75,7 +75,7 @@ getHeat {
 # set the sensor associated with output 1 (heater)
 setCtl1 {
 	out "SHCONT%d";
-	@init { getCtl2; }
+	@init { getCtl1; }
 }
 
 # set the sensor associated with output 2 (analog)
