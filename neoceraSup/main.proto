@@ -103,3 +103,29 @@ getPID2 {
 	in "%(\$1\$5)f";
 	in "%(\$1\$6)f";
 }
+
+# P for output 1 (heater)
+setP1 {
+	out "SPID1,%6f,%(\$1\$2)6f,%(\$1\$3)6f,%(\$1\$4)6f,%(\$1\$5)6f";
+}
+
+# I for output 1 (heater)
+setI1 {
+	out "SPID1,%(\$1\$2)6f,%6f,%(\$1\$3)6f,%(\$1\$4)6f,%(\$1\$5)6f";
+}
+
+# D for output 1 (heater)
+setD1 {
+	out "SPID1,%(\$1\$2)6f,%(\$1\$3)6f,%6f,%(\$1\$4)6f,%(\$1\$5)6f";
+}
+
+# Fixed for output 1 (heater)
+setFixed1 {
+	out "SPID1,%(\$1\$2)6f,%(\$1\$3)6f,%(\$1\$4)6f,%6f,%(\$1\$5)6f";
+}
+
+# Limit for output 1 (heater)
+setLimit1 {
+	out "SPID1,%(\$1\$2)6f,%(\$1\$3)6f,%(\$1\$4)6f,%(\$1\$5)6f,%6f";
+}
+
